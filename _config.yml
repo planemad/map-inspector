@@ -4,7 +4,7 @@ email: ""
 description: > # this means to ignore newlines until "baseurl:"
  Simple frontend for osmlint
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: "" # the base hostname & protocol for your site
+url: "http://planemad.github.io/osmlint-frontend/" # the base hostname & protocol for your site
 twitter_username:
 github_username:
 
