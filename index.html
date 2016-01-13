@@ -15,33 +15,35 @@ title: osmlint
     </h1>
 
 
-    <p>Find out about your representative in the <a href="https://en.wikipedia.org/wiki/List_of_members_of_the_16th_Lok_Sabha">16th Lok Sabha</a>. All the data is <a href="https://github.com/folography/visavis/tree/gh-pages/data">open</a>.</p>
+    <p>Click an issue to open in JOSM</p>
 
     <div data-map='legend'>
 
-      <h3>Issues</h3>
+      <!-- <h3>Issues</h3>
 
       <ul class="keyline-top space-bottom1">
         <li>
-          <a data-map-layer='myneta-loksabha mask' data-map-layer-filter='["==", "myneta Party", "-1"]' href="#" class="truncate strong bloxk small active" onclick='mapFilter(this);'>
+          <a data-map-layer='osmlint circle selfintersecting'  href="#" class="truncate strong bloxk small active" onclick='mapToggle(this);'>
               Self Intersecting Ways</a>
         </li>
         <li>
-          <a data-map-layer='myneta-loksabha mask' data-map-layer-filter='["!=", "myneta Party", "BJP"]' href="#" class="truncate strong bloxk small" onclick='mapFilter(this);'>
+          <a data-map-layer='osmlint circle selfintersecting' href="#" class="truncate strong bloxk small" onclick='mapToggle(this);'>
               Unclosed Ways</a>
         </li>
         <li>
-          <a data-map-layer='myneta-loksabha mask' data-map-layer-filter='["!=", "myneta Party", "INC"]' href="#" class="truncate strong bloxk small" onclick='mapFilter(this);'>
+          <a data-map-layer='osmlint circle selfintersecting' href="#" class="truncate strong bloxk small" onclick='mapToggle(this);'>
               Bridge on node</a>
         </li>
       </ul>
 
-    </div>
+    </div> -->
+
     <a href='https://github.com/planemad/osmlint-frontend' class='button short stroke quiet icon alert'>Site has issues..</a>
 
   </div>
 
 </div>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="/js/mapbox-gl-js-common.js"></script>
 <script type="text/javascript" src="/js/map.js"></script>

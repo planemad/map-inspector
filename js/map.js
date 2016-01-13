@@ -11,12 +11,6 @@ var map = new mapboxgl.Map({
 // Add geocoder https://github.com/mapbox/mapbox-gl-geocoder/blob/master/API.md
 map.addControl(new mapboxgl.Geocoder({'position':'top-right'}));
 
-// Define a layer collection for easy styling
-var mapLayerCollection = {
-  'myneta-loksabha': ['myneta-loksabha fill-0', 'myneta-loksabha fill-1', 'myneta-loksabha fill-2', 'myneta-loksabha fill-3', 'myneta-loksabha fill-4', 'myneta-loksabha fill-5', 'myneta-loksabha fill-6', 'myneta-loksabha fill-7', 'myneta-loksabha mask', 'myneta-loksabha selected'],
-  'myneta-loksabha mask': ['myneta-loksabha mask']
-};
-
 map.on('style.load', function(e) {
 
   map.on('click', function(e) {
@@ -25,16 +19,12 @@ map.on('style.load', function(e) {
       radius: 4
     }, function(err, features) {
 
-      var osmId;
-      var josmUrl;
+      // Code lifted from https://github.com/geohacker/geojson-josm-url/blob/master/index.js
+      var baseURL = "http://localhost:8111/load_object?new_layer=true&objects=";
+      var prefix = Object.keys(features[0].properties).indexOf('_osm_way_id') == -1 ? 'n' : 'w';
+      var osmID = features[0].properties._osm_way_id || features[0].properties._osm_node_id;
 
-      if( '_osm_way_id' in features[0].properties )
-        osmId = features[0].properties['_osm_way_id']
-      if( '_osm_node_id' in features[0].properties )
-        osmId = features[0].properties['_osm_node_id']
-
-      console.log(osmId)
-      // window.open(josmUrl);
+      window.open(baseURL + prefix + osmID);
     });
   });
 
