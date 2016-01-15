@@ -19,7 +19,7 @@ map.on('style.load', function(e) {
 
   // Display feature properties on hover
   map.on('mousemove', function (e) {
-       map.featuresAt(e.point, {layer:'data circle', radius: 5}, function (err, features) {
+       map.featuresAt(e.point, {layer:'data circle locator', radius: 5}, function (err, features) {
            if (err) throw err;
            document.getElementById('feature-properties').innerHTML = JSON.stringify(features[0].properties, null, 2);
        });
@@ -32,7 +32,7 @@ map.on('style.load', function(e) {
     // var osmIdField = {'way':'_osm_way_id','node':'_osm_node_id'}
 
     map.featuresAt(e.point, {
-      layer: ['data circle'],
+      layer: ['data circle locator'],
       radius: 4
     }, function(err, features) {
 
